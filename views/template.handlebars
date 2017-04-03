@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=320" />
+    <meta property="og:title" content="Cooper Union Twitter API" />
+    <meta property="og:url" content="http://cooper-union-twitter-api.glitch.com" />
+    <meta property="og:description" content="A proxy for more easily using the Twitter API" />
+    <!--<link rel="stylesheet" type="text/css" href="template.css" />-->
+    {{#stylesheet}}
+      <link rel="stylesheet" type="text/css" href="{{stylesheet}}" />
+    {{/stylesheet}}
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+    <!--<script src="template.js"></script>-->
+  </head>
+  <body class="{{page}}">
+
+    <h1>{{description}}</h1>
+
+      <ul>
+        {{#examples}}
+          <li><a href="{{url}}">{{title}}</a></li>
+        {{/examples}}
+      </ul>
+
+  </body>
+</html>

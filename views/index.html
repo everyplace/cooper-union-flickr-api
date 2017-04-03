@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first API project</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+
+      
+   
+      
+//       var response = {
+//         "metadata":"I don't care about this stuff",
+//         "statuses":[
+//           {"author":"henrietta","tweet":"hello there"},
+//           {"author":"erin","tweet":"hi"},
+//           {"author":"joe","tweet":"s'up"}
+//         ]
+//       };
+      
+//       console.log(response.statuses[2].author)
+      
+//       console.log(response.statuses.length)
+      
+//       for (var i=0; i<response.statuses.length; i++) {
+//         console.log(response.statuses[i].author)
+//       }
+      
+      
+      
+      var data_url = "https://cooper-union-twitter-api.glitch.me/tweets/?q=cooper%20union";
+      $.getJSON(data_url, function(response){
+        console.log("raw data", response);
+        console.log("exploring data", response.statuses.length);
+        
+        $("body").append("<ul>");
+        
+        for (var i =0; i<response.statuses.length; i++) {
+          
+          console.log("@" + response.statuses[i].user.name);
+          
+          
+          var html = "<li>" + "<a href=https://twitter.com/" + response.statuses[i].user.name + ">" + "@" + response.statuses[i].user.name + "</a></li>";
+          
+          $("ul").append(html);
+          
+        };
+
+        
+        
+        
+      });
+    </script>
+  </head>
+  <body>
+
+    <h1>
+      Look in the console
+    </h1>
+    <h2>
+      <a href="/">view sample urls here</a>
+    </h2>
+
+  </body>
+</html>
